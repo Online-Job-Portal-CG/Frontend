@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SkillserviceService } from './skillservice.service';
+import { BookmarkedjobService } from './bookmarkedjob.service';
 
-describe('SkillserviceService', () => {
-  let service: SkillserviceService;
+describe('BookmarkedjobService', () => {
+  let service: BookmarkedjobService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SkillserviceService);
+    service = TestBed.inject(BookmarkedjobService);
   });
 
   it('should be created', () => {
