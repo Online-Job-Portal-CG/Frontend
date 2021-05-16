@@ -1,59 +1,65 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddBookmarkfreelancerComponent } from './bookmarkedfreelancer/add-bookmarkfreelancer/add-bookmarkfreelancer.component';
-import { BookmarkedfreelancerComponent } from './bookmarkedfreelancer/bookmarkedfreelancer.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { FindBookmarkfreelancerByidComponent } from './bookmarkedfreelancer/find-bookmarkfreelancer-byid/find-bookmarkfreelancer-byid.component';
-import { FindBookmarkfreelancerByskillComponent } from './bookmarkedfreelancer/find-bookmarkfreelancer-byskill/find-bookmarkfreelancer-byskill.component';
-import { JobComponent } from './job/job.component'
+import { AddBookmarkfreelancerComponent } from './recruiter/bookmarkedfreelancer/add-bookmarkfreelancer/add-bookmarkfreelancer.component';
+import { BookmarkedfreelancerComponent } from './recruiter/bookmarkedfreelancer/bookmarkedfreelancer.component';
+import { FindBookmarkfreelancerByidComponent } from './recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byid/find-bookmarkfreelancer-byid.component';
+import { FindBookmarkfreelancerByskillComponent } from './recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byskill/find-bookmarkfreelancer-byskill.component';
+import { RecruiterComponent } from './recruiter/recruiter.component';
 const routes: Routes = [
   //base path
   { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
   //path to bookmarkfreelancer and its services
   {
-    path: '/bmark/freelancer',
-    component: BookmarkedfreelancerComponent,
-    children: [
+    path: '',
+    component: RecruiterComponent,
+    children:[
       {
-        path: '/add',
-        component: AddBookmarkfreelancerComponent
+        path: 'bmark/freelancer',
+        component: BookmarkedfreelancerComponent,
+        children: [
+          {
+            path: 'add',
+            component: AddBookmarkfreelancerComponent
+          },
+          {
+            path: 'find/:id',
+            component: FindBookmarkfreelancerByidComponent
+          },
+          {
+            path: 'find/:skillName',
+            component: FindBookmarkfreelancerByskillComponent
+          }
+        ],
       },
-      {
-        path: '/find/:id',
-        component: FindBookmarkfreelancerByidComponent
-      },
-      {
-        path: '/find/:skillName',
-        component: FindBookmarkfreelancerByskillComponent
-      }
-    ],
-  },
-  //path to feedback and its services
-  {
-    path: '/feedback',
-    component: FeedbackComponent,
-    children: [
-      {
-
-      },
-      {
-
-      }
+      //path to feedback and its services
+      // {
+      //   path: 'feedback',
+      //   component: FeedbackComponent,
+      //   children: [
+      //     {
+    
+      //     },
+      //     {
+    
+      //     }
+      //   ]
+      // },
+      // //path to job and its services
+      // {
+      //   path: 'job',
+      //   component: JobComponent,
+      //   children: [
+      //     {
+    
+      //     },
+      //     {
+    
+      //     }
+      //   ]
+      // }
     ]
   },
-  //path to job and its services
-  {
-    path: '/job',
-    component: JobComponent,
-    children: [
-      {
-
-      },
-      {
-
-      }
-    ]
-  }
+  
 ];
 
 @NgModule({
