@@ -13,7 +13,14 @@ export class AdminService {
   public findById(id: number): Observable<any> {
     console.log("Find Admin by id method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/find/${id}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseUrl}/find/id/${id}`, { headers, responseType: 'json' });
+  }
+
+  //GET Method
+  public findByName(name: string): Observable<any> {
+    console.log("Find Admin by userName method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/find/name/${name}`, { headers, responseType: 'json' });
   }
 
   //POST Method

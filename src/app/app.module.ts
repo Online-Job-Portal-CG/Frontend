@@ -26,6 +26,8 @@ import { AdminModule } from './module/admin/admin.module';
 import { FreelancerModule } from './module/freelancer/freelancer.module';
 import { RecruiterModule } from './module/recruiter/recruiter.module';
 import { LoginComponent } from './components/login/login.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,9 +43,12 @@ import { LoginComponent } from './components/login/login.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AdminModule,
     FreelancerModule,
     RecruiterModule,
+    HttpClientModule
   ],
   providers: [
     AdminService,

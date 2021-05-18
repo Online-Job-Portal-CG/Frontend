@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form class="form" [formGroup]="loginForm">
+                <div class="mb-3 form-group">
+                    <label for="loginId" class="form-label">UserName</label>
+                    <span style="color: red">*</span>
+                    <input type="text" class="form-control" id="loginId" placeholder="userName" formControlName="loginId">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="passwordField" class="form-label">Password</label>
+                    <span style="color: red">*</span>
+                    <input type="password" class="form-control" id="passwordField" placeholder="password"
+                        formControlName="password">
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="userRole">Select Role</label>
+                    <span style="color: red">*</span>
+                    <select class="form-select" id="userRole" formControlName="role">
+                        <option value="1">Admin</option>
+                        <option value="2">Recruiter</option>
+                        <option value="3">Freelancer</option>
+                    </select>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-success" (click)="onsubmit()">Login</button>
+                    <br>
+                    <button type="reset" class="btn btn-dark">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+</div>
