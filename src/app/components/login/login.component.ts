@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           console.log(data.userName);
           if (data.password === password) {
             alert("Logged in Successfully");
-            this.redirect("admin");
+            this.redirect("admin-dashboard");
           } else {
             alert("Invalid Login Details!");
           }
@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
           console.log(data.userName);
           if (data.password === password) {
             alert("Logged in Successfully");
-            this.redirect("recruiter");
+            this.redirect("recruiter-dashboard");
           } else {
             alert("Invalid Login Details!");
           }
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
           console.log(data.userName);
           if (data.password === password) {
             alert("Logged in Successfully");
-            this.redirect("freelancer");
+            this.redirect("freelancer-dashboard");
           } else {
             alert("Invalid Login Details!");
           }
