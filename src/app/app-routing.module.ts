@@ -13,15 +13,15 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'recruiter',
+    path: 'recruiter-dashboard',
     loadChildren: () => import('./module/recruiter/recruiter.module').then(m => m.RecruiterModule)
   },
   {
-    path: 'freelancer',
+    path: 'freelancer-dashboard',
     loadChildren: () => import('./module/freelancer/freelancer.module').then(m => m.FreelancerModule)
   },
   {
-    path: 'admin',
+    path: 'admin-dashboard',
     loadChildren: () => import('./module/admin/admin.module').then(m => m.AdminModule)
   }
 ];
