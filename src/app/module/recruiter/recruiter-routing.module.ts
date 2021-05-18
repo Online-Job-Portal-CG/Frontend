@@ -7,59 +7,31 @@ import { FindBookmarkfreelancerByskillComponent } from './recruiter/bookmarkedfr
 import { RecruiterComponent } from './recruiter/recruiter.component';
 const routes: Routes = [
   //base path
-  { path: '', redirectTo: 'recruiter', pathMatch: 'full' },
+  { path: '', redirectTo: '/recruiter', pathMatch: 'full' },
   //path to bookmarkfreelancer and its services
   {
-    path: '',
+    path: 'recruiter',
     component: RecruiterComponent,
-    children:[
-      {
-        path: 'bmark/freelancer',
-        component: BookmarkedfreelancerComponent,
-        children: [
-          {
-            path: 'add',
-            component: AddBookmarkfreelancerComponent
-          },
-          {
-            path: 'find/:id',
-            component: FindBookmarkfreelancerByidComponent
-          },
-          {
-            path: 'find/:skillName',
-            component: FindBookmarkfreelancerByskillComponent
-          }
-        ],
-      },
-      //path to feedback and its services
-      // {
-      //   path: 'feedback',
-      //   component: FeedbackComponent,
-      //   children: [
-      //     {
-    
-      //     },
-      //     {
-    
-      //     }
-      //   ]
-      // },
-      // //path to job and its services
-      // {
-      //   path: 'job',
-      //   component: JobComponent,
-      //   children: [
-      //     {
-    
-      //     },
-      //     {
-    
-      //     }
-      //   ]
-      // }
-    ]
   },
-  
+  {
+    path: 'recruiter/bmark/freelancer',
+    component: BookmarkedfreelancerComponent,
+    children: [
+      {
+        path: 'add',
+        component: AddBookmarkfreelancerComponent
+      },
+      {
+        path: 'find/id/:id',
+        component: FindBookmarkfreelancerByidComponent
+      },
+      {
+        path: 'find/name/:skillName',
+        component: FindBookmarkfreelancerByskillComponent
+      }
+    ],
+  }
+
 ];
 
 @NgModule({

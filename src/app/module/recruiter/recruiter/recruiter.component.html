@@ -1,20 +1,29 @@
 <div>
-    <div class="container-fluid">
-        <div class="card">
+    <div class="container-fluid row">
+        <div class="card col text-center">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Bookmark Freelancers</h5>
                 <p class="card-text">Manage your Bookmarked Freelancers</p>
+                <button class="btn btn-success" routerLink="/recruiter/bmark/freelancer">Manage Bookmarks</button>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a routerLink="bmark/freelancer/add">Bookmark a Freelancer</a></li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
+        </div>
+        <div class="card col text-center">
+            <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <h5 class="card-title">Feedbacks</h5>
+                <p class="card-text">Manage your Feedbacks</p>
+                <button class="btn btn-primary" routerLink="/recruiter/feedbacks">Manage Bookmarks</button>
+            </div>
+        </div>
+        <div class="card col text-center">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Jobs</h5>
+                <p class="card-text">Manage your Posted Jobs</p>
+                <button class="btn btn-warning" routerLink="/recruiter/jobs">Manage Bookmarks</button>
             </div>
         </div>
     </div>
+    <router-outlet></router-outlet>
 </div>
