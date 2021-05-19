@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class FreelancerService {
   baseUrl = "http://localhost:8001/freelancer";
+  freelancerId: number;
   constructor(private http: HttpClient) { }
 
   //POST Method
@@ -35,6 +36,20 @@ export class FreelancerService {
     console.log("Update Freelancer Details");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.put(`${this.baseUrl}/update/${id}`, freelancer, { headers, responseType: 'json' });
+  }
+
+  //GET Method
+  public listAll(): Observable<any> {
+    console.log("List Freelancers");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/listAll`, { headers, responseType: 'json' });
+  }
+
+  public getFreelancerId() {
+    return this.freelancerId;
+  }
+  public setFreelancerId(freelancerId: number) {
+    this.freelancerId = freelancerId;
   }
 }
 

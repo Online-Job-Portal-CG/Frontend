@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddBookmarkfreelancerComponent } from './recruiter/bookmarkedfreelancer/add-bookmarkfreelancer/add-bookmarkfreelancer.component';
 import { BookmarkedfreelancerComponent } from './recruiter/bookmarkedfreelancer/bookmarkedfreelancer.component';
 import { FindBookmarkfreelancerByidComponent } from './recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byid/find-bookmarkfreelancer-byid.component';
-import { FindBookmarkfreelancerByskillComponent } from './recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byskill/find-bookmarkfreelancer-byskill.component';
+import { ListbookmarksComponent} from './recruiter/bookmarkedfreelancer/listbookmarks/listbookmarks.component'
+import { ListfreelancersComponent } from './recruiter/bookmarkedfreelancer/listfreelancers/listfreelancers.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 const routes: Routes = [
   //base path
@@ -18,16 +19,20 @@ const routes: Routes = [
     component: BookmarkedfreelancerComponent,
     children: [
       {
+        path: 'listFreelancers',
+        component: ListfreelancersComponent, 
+      },
+      {
         path: 'add',
         component: AddBookmarkfreelancerComponent
       },
       {
-        path: 'find/id/:id',
+        path: 'find/:id',
         component: FindBookmarkfreelancerByidComponent
       },
       {
-        path: 'find/name/:skillName',
-        component: FindBookmarkfreelancerByskillComponent
+        path: 'list',
+        component: ListbookmarksComponent
       }
     ],
   }

@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class RecruiterService {
   baseUrl = "http://localhost:8001/recruiter";
+  recruiterId:number;
   constructor(private http: HttpClient) { }
-
+  
   //POST Method
   public addRecruiter(recruiter: Recruiter): Observable<any> {
     console.log("Create new Recruiter");

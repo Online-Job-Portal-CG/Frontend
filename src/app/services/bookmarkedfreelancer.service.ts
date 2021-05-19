@@ -24,23 +24,22 @@ export class BookmarkedfreelancerService {
   }
 
   //GET METHOD
-  public getBookmarkedFreelancersBySkill(skillName: string): Observable<any> {
-    console.log("Bookmarked Freelancers by skill Name method");
-    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/findBySkill/${skillName}`, { headers, responseType: 'json' });
-  }
-
-  //GET METHOD
   public getBookmarkedFreelancerById(id: number): Observable<any> {
     console.log("Get Bookmarked Freelancer By Id");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/get/${id}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseUrl}/get/id/${id}`, { headers, responseType: 'json' });
+  }
+
+  //GET Method
+  public getAllBookmarks(): Observable<any> {
+    console.log("Get all Bookmarked Freelancers");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/getAll`, { headers, responseType: 'json' });
   }
 }
 
 
 export class BookmarkFreelancer {
-  skillId: number;
   recruiterId: number;
   freelancerId: number;
 }

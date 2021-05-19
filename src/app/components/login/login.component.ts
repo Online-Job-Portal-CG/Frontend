@@ -62,6 +62,9 @@ export class LoginComponent implements OnInit {
           console.log(data.userName);
           if (data.password === password) {
             alert("Logged in Successfully");
+            // this.recruiterService.setRecruiterId(data.id);
+            // console.log(this.recruiterService.getRecruiterId());
+            localStorage.setItem('recruiterId',data.id);
             this.redirect("recruiter-dashboard");
           } else {
             alert("Invalid Login Details!");
@@ -81,6 +84,7 @@ export class LoginComponent implements OnInit {
           console.log(data.userName);
           if (data.password === password) {
             alert("Logged in Successfully");
+            this.freelancerService.setFreelancerId(data.id);
             this.redirect("freelancer-dashboard");
           } else {
             alert("Invalid Login Details!");

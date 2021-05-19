@@ -1,1 +1,47 @@
-<p>find-bookmarkfreelancer-byid works!</p>
+<div class="text-center">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card">
+                <h5 class="card-title">Bookmarked Freelancer Details</h5>
+                <div class="card-body">
+                    <table class="table table-hover table-primary">
+                        <thead>
+                            <tr>
+                                <th>Freelancer Name</th>
+                                <th>Freelancer UserId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{bookmarkedFreelancer.name}}</td>
+                                <td>{{bookmarkedFreelancer.userName}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5>Skills</h5>
+                    <table class="table table-success table-striped">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    Skill
+                                </th>
+                                <th>
+                                    Experience(in Years)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let name of bookmarkedFreelancer.skillName; let i=index">
+                                <td>{{name}}</td>
+                                <td>{{bookmarkedFreelancer.skillExp[i]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

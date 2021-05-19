@@ -9,7 +9,6 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 import { AddBookmarkfreelancerComponent } from './module/recruiter/recruiter/bookmarkedfreelancer/add-bookmarkfreelancer/add-bookmarkfreelancer.component';
-import { FindBookmarkfreelancerByskillComponent } from './module/recruiter/recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byskill/find-bookmarkfreelancer-byskill.component';
 import { FindBookmarkfreelancerByidComponent } from './module/recruiter/recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byid/find-bookmarkfreelancer-byid.component';
 
 import { AdminService } from './services/admin.service'
@@ -36,7 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     AboutUsComponent,
     ContactUsComponent,
     AddBookmarkfreelancerComponent,
-    FindBookmarkfreelancerByskillComponent,
     FindBookmarkfreelancerByidComponent,
     LoginComponent
   ],
