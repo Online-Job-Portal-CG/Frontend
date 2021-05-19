@@ -1,17 +1,15 @@
 <div class="container-fluid">
     <h5 class="text-center">List of Bookmarks by {{recruiterName}}</h5>
-    <!-- <table class="table table-striped table-primary text-center">
+    <table class="table table-striped table-primary text-center table-responsive">
         <thead>
-            <th>Id</th>
-            <th>Name</th>
-            <th>UserName</th>
+            <th>Freelancer</th>
+            <th>Recruiter</th>
         </thead>
         <tbody>
-            <tr *ngFor="let fr of bookmarksList">
-                <td>{{fr.freelancer.id}}</td>
-                <td>{{fr.freelancer.firstName+" "+fr.freelancer.lastName}}</td>
-                <td>{{fr.freelancer.userName}}</td>
+            <tr *ngFor="let fr of bookmarksList.name; let i=index;">
+                <td>{{fr}}</td>
+                <td>{{bookmarksList.userName[i]}}</td>
             </tr>
         </tbody>
-    </table> -->
+    </table>
 </div>

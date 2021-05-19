@@ -5,6 +5,7 @@ import { BookmarkedfreelancerComponent } from './recruiter/bookmarkedfreelancer/
 import { FindBookmarkfreelancerByidComponent } from './recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byid/find-bookmarkfreelancer-byid.component';
 import { ListbookmarksComponent} from './recruiter/bookmarkedfreelancer/listbookmarks/listbookmarks.component'
 import { ListfreelancersComponent } from './recruiter/bookmarkedfreelancer/listfreelancers/listfreelancers.component';
+import { FeedbackComponent } from './recruiter/feedback/feedback.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 const routes: Routes = [
   //base path
@@ -35,7 +36,14 @@ const routes: Routes = [
         component: ListbookmarksComponent
       }
     ],
-  }
+  },
+  // {
+  //   path: 'recruiter/feedbacks',
+  //   component: FeedbackComponent
+  //   children:[
+
+  //   ]
+  // }
 
 ];
 
