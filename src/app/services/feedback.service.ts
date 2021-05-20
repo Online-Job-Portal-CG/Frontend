@@ -10,30 +10,32 @@ export class FeedbackService {
   constructor(private http: HttpClient) { }
 
   //POST Method
-  public addFeedback(feedback: Feedback): Observable<any> {
+  public addFeedback(feedbackDto: FeedbackDTO): Observable<any> {
     console.log("Create New Feedback");
+    console.log(feedbackDto);
+    
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, feedback, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`,feedbackDto, { headers, responseType:'json' });
   }
 
   //GET Method
-  public getFeedbackForFreelancer(id: number): Observable<any> {
+  public getFeedbackForFreelancer(id: string): Observable<any> {
     console.log("Get Feedbacks for Freelancer");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.get(`${this.baseUrl}/get/${id}`, { headers, responseType: 'json' });
   }
 
   //GET Method
-  public getAverageRatings(id: number): Observable<any> {
+  public getAverageRatings(id: string): Observable<any> {
     console.log("Get Average Ratings for Freelancer");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.get(`${this.baseUrl}/get/avgRatingsFor/${id}`, { headers, responseType: 'json' });
   }
 }
 
-export class Feedback {
+export class FeedbackDTO {
   ranges: number;
   comments: string;
-  recruiterId: number;
-  freelancerId: number;
+  recruiterId: string;
+  freelancerId: string;
 }

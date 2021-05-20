@@ -14,10 +14,11 @@ import { FindJobByskillComponent } from './recruiter/job/find-job-byskill/find-j
 import { ListAllJobsComponent } from './recruiter/job/list-all-jobs/list-all-jobs.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AwardJobComponent } from './recruiter/job/award-job/award-job.component';
+import { AddFeedbackComponent } from './recruiter/feedback/add-feedback/add-feedback.component';
 
 
 @NgModule({
-  declarations: [BookmarkedfreelancerComponent, FeedbackComponent, JobComponent, RecruiterComponent, ListbookmarksComponent, ListfreelancersComponent, AddJobComponent, FindJobByidComponent, FindJobByskillComponent, ListAllJobsComponent, AwardJobComponent],
+  declarations: [BookmarkedfreelancerComponent, FeedbackComponent, JobComponent, RecruiterComponent, ListbookmarksComponent, ListfreelancersComponent, AddJobComponent, FindJobByidComponent, FindJobByskillComponent, ListAllJobsComponent, AwardJobComponent, AddFeedbackComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

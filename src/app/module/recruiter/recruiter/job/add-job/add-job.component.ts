@@ -40,8 +40,6 @@ export class AddJobComponent implements OnInit {
     this.postJob.skillId = this.jobForm.value.skillId;
     this.postJob.freelancerId = 0;
     this.postJob.recruiterId = Number(localStorage.getItem('recruiterId'));
-    console.log(this.postJob);
-    console.log(this.jobForm.value);
     this.jobService.addJob(this.postJob).subscribe(
       data=>{
         console.log(data);

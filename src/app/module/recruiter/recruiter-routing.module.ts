@@ -13,6 +13,7 @@ import { FindJobByskillComponent } from './recruiter/job/find-job-byskill/find-j
 import { JobComponent } from './recruiter/job/job.component';
 import { ListAllJobsComponent } from './recruiter/job/list-all-jobs/list-all-jobs.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
+import { AddFeedbackComponent } from './recruiter/feedback/add-feedback/add-feedback.component';
 const routes: Routes = [
   //base path
   { path: '', redirectTo: '/recruiter', pathMatch: 'full' },
@@ -66,8 +67,12 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'recruiter/feedbacks',
+    path: 'recruiter/feedbacks/:frId',
     component: FeedbackComponent
+  },
+  {
+    path: 'recruiter/feedbacks/add/:frUName',
+    component: AddFeedbackComponent
   }
 
 ];

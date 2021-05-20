@@ -2,13 +2,17 @@
     <h5 class="text-center">List of Bookmarks by {{recruiterName}}</h5>
     <table class="table table-striped table-primary text-center table-responsive">
         <thead>
-            <th>Freelancer</th>
-            <th>UserName</th>
+            <th>Bookmard Id</th>
+            <th>Freelancer Name</th>
+            <th>Freelancer UserName</th>
+            <th>Actions</th>
         </thead>
         <tbody>
-            <tr *ngFor="let fr of bookmarksList.name; let i=index;">
-                <td>{{fr}}</td>
-                <td>{{bookmarksList.userName[i]}}</td>
+            <tr *ngFor="let fr of bookmarksList">
+                <td>{{fr.id}}</td>
+                <td>{{fr.freelancerName}}</td>
+                <td>{{fr.freelancerUName}}</td>
+                <td><button class="btn btn-warning" (click)="manageFeedbacks(fr.freelancerUName)">Manage Feedbacks</button></td>
             </tr>
         </tbody>
     </table>

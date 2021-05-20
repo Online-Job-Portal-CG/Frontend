@@ -1,1 +1,39 @@
-<p>feedback works!</p>
+<div class="container-fluid overflow-hidden">
+    <div class="row text-center">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card mt-2">
+                <h4 class="card-title mb-2 display-6">Feedbacks</h4>
+                <h5 class="card-subtitle mb-2">Manage your feedbacks for {{freelancerId}} </h5>
+                <div class="card-body">
+                    <table class="table table-striped table-hover table-warning">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Feedback</td>
+                                <td>Ratings</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let feedback of feedbacks">
+                                <td>{{feedback.id}}</td>
+                                <td>{{feedback.comments}}</td>
+                                <td>{{feedback.rating}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-outline-success" (click)="addFeedback(freelancerId)">Add new Feedback</button>
+                        </div>
+                        <div class="col">
+                            <p>Average Ratings: <input class="form-control-plaintext text-center fw-bold fs-4" type="text"
+                                placeholder="{{avgFeedback}}" disabled readonly></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
