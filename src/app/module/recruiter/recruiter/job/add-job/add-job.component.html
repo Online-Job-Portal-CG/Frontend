@@ -1,0 +1,31 @@
+<div class="container-fluid overflow-hidden text-center">
+    <h4>Create A new Job Opening</h4>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 card bg-light bg-gradient border border-5 shadow">
+            <div class="card-body">
+                <form class="form" [formGroup] = "jobForm">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Job Title</span>
+                        <input class="form-control" type="text" name="jobTitle" id="jobTitle" formControlName="jobTitle">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Job Description</span>
+                        <textarea class="form-control" formControlName="jobDescription"></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Skill</span>
+                        <select class="form-select" name="Skill List" id="skillList" formControlName="skillId">
+                            <option *ngFor="let skill of skills" value="{{skill.id}}">{{skill.name}}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-outline-primary" type="submit" (click)="onSubmit()">Post Job</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

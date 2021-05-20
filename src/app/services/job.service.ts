@@ -13,7 +13,7 @@ export class JobService {
   public addJob(job: Job): Observable<any> {
     console.log("Create new Job Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/ppostJob`, job, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/postJob`, job, { headers, responseType: 'text' as 'json' });
   }
 
   //GET Method
@@ -31,10 +31,23 @@ export class JobService {
   }
 
   //GET Method
-  public closeJob(id: number, job: Job): Observable<any> {
+  public closeJob(id: number): Observable<any> {
     console.log("Close a job method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/close/${id}`, {headers, responseType:'json'});
+    return this.http.get(`${this.baseUrl}/close/${id}`, { headers, responseType: 'json' });
+  }
+  //GET Method
+  public getAllJobs(): Observable<any> {
+    console.log("Get All Jobs Method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/findAll`, { headers, responseType: 'json' });
+  }
+
+  //PUT Method
+  public awardJob(jobId: number, freelancerId: number): Observable<any> {
+    console.log("Award Job Method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.put(`${this.baseUrl}/awardJob/${jobId}/${freelancerId}`, { headers, responseType: 'json' });
   }
 }
 
@@ -42,4 +55,6 @@ export class Job {
   freelancerId: number;
   skillId: number;
   recruiterId: number;
+  jobTitle: string;
+  jobDescription: string;
 }

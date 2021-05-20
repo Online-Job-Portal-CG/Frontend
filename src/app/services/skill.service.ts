@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SkillService {
-  baseUrl = "http://localhost:8001/skill"
+  baseUrl = "http://localhost:8001/skills"
   constructor(private http: HttpClient) { }
   //POST Method
   public createSkill(skill: Skill): Observable<any> {
     console.log("Create Skill Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, skill, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`, skill, { headers, responseType:'text' as 'json' });
   }
 
   //GET Method

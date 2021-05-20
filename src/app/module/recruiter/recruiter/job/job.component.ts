@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-job',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  findBySkill(skill: String){
+    this.router.navigate(['./findSkill',skill],{relativeTo:this.route});
   }
 
 }

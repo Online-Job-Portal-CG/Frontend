@@ -1,1 +1,34 @@
-<p>job works!</p>
+<div class="container-fluid overflow-hidden">
+    <div class="row mt-3 ">
+        <div class="col p-3 w-100 align-self-stretch">
+            <div class="card shadow border-5 rounded-3 text-center bg-light bg-gradient">
+                <div class="card-body">
+                    <h5 class="card-title">Post A Job Opening</h5>
+                    <p class="card-text">Fill your empty positions</p>
+                    <button class="btn btn-success" routerLink="create">Create new Job</button>
+                </div>
+            </div>
+        </div>
+        <div class="col p-3">
+            <div class="card shadow border-5 rounded-3 text-center bg-light bg-gradient">
+                <div class="card-body">
+                    <h5 class="card-title">List Jobs</h5>
+                    <p class="card-text">View All Posted Jobs</p>
+                    <button class="btn btn-info" routerLink="list">Manage Jobs</button>
+                </div>
+            </div>
+        </div>
+        <div class="col p-3">
+            <div class="card shadow border-5 rounded-3 text-center bg-light bg-gradient">
+                <div class="card-body">
+                    <h5 class="card-title">Jobs by Skill</h5>
+                    <p class="card-text">View All Jobs for a Skill</p>
+                    <input  class="form-control" type="text" name="findBySkill" id="findBySkill" placeholder="Skill Name" #skill>
+                    <button class="btn btn-dark mt-2" (click)="findBySkill(skill.value)">View Jobs</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <router-outlet></router-outlet>
+</div>

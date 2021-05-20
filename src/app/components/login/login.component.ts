@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     const role = this.loginForm.get('role').value;
     const loginId = this.loginForm.get('loginId').value;
     const password = this.loginForm.get('password').value;
-
+    localStorage.setItem('recruiterUName',loginId);
     //Admin Role
     if (role === '1') {
       this.adminService.findByName(loginId).subscribe(
