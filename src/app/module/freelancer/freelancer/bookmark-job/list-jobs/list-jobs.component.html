@@ -1,1 +1,27 @@
-<p>list-jobs works!</p>
+<div class="container-fluid">
+    <h3 class="text-center">Active Jobs list</h3>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 card">
+            <table class="table table-striped table-hover table-warning text-center">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Job Title</th>
+                        <th>Job Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let job of activeJobsList">
+                        <td>{{job.jobId}}</td>
+                        <td>{{job.jobTitle}}</td>
+                        <td>{{job.jobDescription}}</td>
+                        <td><button class="btn btn-success" (click)="addBookmark(job.jobId, job.skillId)">Bookmark</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

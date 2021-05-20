@@ -14,7 +14,7 @@ export class BookmarkedjobService {
   public createBookmark(bJob: BookmarkedJob): Observable<any> {
     console.log("Bookmark a job method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, bJob, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`, bJob, { headers, responseType: 'text' as 'json' });
   }
 
   //DELETE Method
@@ -28,14 +28,20 @@ export class BookmarkedjobService {
   public getById(id: number): Observable<any> {
     console.log("Get Bookmarked Job By Id method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/get/${id}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseUrl}/get/id/${id}`, { headers, responseType: 'json' });
   }
 
   //GET Method
   public getBySkill(skillName: string): Observable<any> {
     console.log("Get Bookmarked Jobs by Skill Name method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/get/${skillName}`, {headers, responseType:'json'});
+    return this.http.get(`${this.baseUrl}/get/skill/${skillName}`, {headers, responseType:'json'});
+  }
+  //GET Method
+  public getAll(): Observable<any> {
+    console.log("Get Bookmarked Jobs method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/findAll`, {headers, responseType:'json'});
   }
 }
 

@@ -1,1 +1,31 @@
-<p>bookmark-job works!</p>
+<div class="container-fluid overflow-hidden">
+    <div class="row mt-4">
+        <div class="col p-3">
+            <div class="card shadow border-5 rounded-3 text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Bookmark a Job</h5>
+                    <button routerLink="listJobs" class="btn btn-success" >List Active Jobs</button>
+                </div>
+            </div>
+        </div>
+        <div class="col p-3">
+            <div class="card shadow border-5 rounded-3 text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Find a Bookmark By Id</h5>
+                    <input class="form-control" type="number" id = "bkdJobId" name="bkdJobId" placeholder="Bookmarked Freelancer Id" #bkdJobId>
+                    <button class="btn btn-primary mt-2" (click)="findById(bkdJobId.value)">Find By Id</button>
+                </div>
+            </div>
+        </div>
+        <div class="col p-3">
+            <div class="card shadow border-5 rounded-3 text-center">
+                <div class="card-body">
+                    <h5 class="card-title">List Bookmarks</h5>
+                    <button class="btn btn-warning" routerLink="list">View List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <router-outlet></router-outlet>
+</div>

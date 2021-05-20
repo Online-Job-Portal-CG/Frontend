@@ -34,13 +34,14 @@ export class LoginComponent implements OnInit {
     const role = this.loginForm.get('role').value;
     const loginId = this.loginForm.get('loginId').value;
     const password = this.loginForm.get('password').value;
-    localStorage.setItem('recruiterUName',loginId);
+    
     //Admin Role
     if (role === '1') {
       this.adminService.findByName(loginId).subscribe(
         data => {
           console.log(data.userName);
           if (data.password === password) {
+            
             alert("Logged in Successfully");
             this.redirect("admin-dashboard");
           } else {
@@ -57,6 +58,7 @@ export class LoginComponent implements OnInit {
 
     //Recruiter Role
     else if (role === '2') {
+      
       this.recruiterService.getByName(loginId).subscribe(
         data => {
           console.log(data.userName);
@@ -64,6 +66,7 @@ export class LoginComponent implements OnInit {
             alert("Logged in Successfully");
             // this.recruiterService.setRecruiterId(data.id);
             // console.log(this.recruiterService.getRecruiterId());
+            localStorage.setItem('recruiterUName',loginId);
             localStorage.setItem('recruiterId',data.id);
             this.redirect("recruiter-dashboard");
           } else {
@@ -84,6 +87,8 @@ export class LoginComponent implements OnInit {
           console.log(data.userName);
           if (data.password === password) {
             alert("Logged in Successfully");
+            localStorage.setItem('freelancerUName',loginId);
+            localStorage.setItem('freelancerId',data.id);
             this.freelancerService.setFreelancerId(data.id);
             this.redirect("freelancer-dashboard");
           } else {

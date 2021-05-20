@@ -49,6 +49,13 @@ export class JobService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.put(`${this.baseUrl}/awardJob/${jobId}/${freelancerId}`, { headers, responseType: 'json' });
   }
+
+  //GET Method
+  public getAllActive(): Observable<any> {
+    console.log("Get All Active Jobs Method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/getAllActive`, { headers, responseType: 'json' }); 
+  }
 }
 
 export class Job {

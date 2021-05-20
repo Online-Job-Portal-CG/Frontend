@@ -1,1 +1,17 @@
-<p>freelancer works!</p>
+<div class="container-fluid row">
+    <div class="card shadow border-5 rounded-3 col text-center">
+        <div class="card-body">
+            <h5 class="card-title">Bookmark Freelancers</h5>
+            <p class="card-text">Manage your Bookmarked Freelancers</p>
+            <button class="btn btn-success" routerLink="/freelancer/bmark/job">Explore Bookmarks</button>
+        </div>
+    </div>
+    <div class="card shadow border-5 rounded-3 col text-center">
+        <div class="card-body">
+            <h5 class="card-title">Skills</h5>
+            <p class="card-text">Manage your Skills</p>
+            <button class="btn btn-primary" routerLink="/freelancer/skills">Explore Skills</button>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

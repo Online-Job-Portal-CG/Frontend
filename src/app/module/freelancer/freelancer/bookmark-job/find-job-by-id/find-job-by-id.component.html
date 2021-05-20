@@ -1,1 +1,47 @@
-<p>find-job-by-id works!</p>
+<div class="text-center">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card">
+                <h5 class="card-title">Bookmarked Job Details</h5>
+                <div class="card-body">
+                    <table class="table table-hover table-primary table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Job Id</th>
+                                <th>Job Title</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{bookmarkedJob.id}}</td>
+                                <td>{{bookmarkedJob.job.jobTitle}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5>Skills Required</h5>
+                    <table class="table table-warning table-bordered border-danger table-hover table-sm table-responsive">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    Skill
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{bookmarkedJob.skill.name}}</td>
+                                <td>{{bookmarkedJob.skill.description}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

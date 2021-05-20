@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BookmarkedJob, BookmarkedjobService } from 'src/app/services/bookmarkedjob.service';
 
 @Component({
   selector: 'app-find-job-by-id',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./find-job-by-id.component.css']
 })
 export class FindJobByIdComponent implements OnInit {
-
-  constructor() { }
+  bookmarkedJob: any[]
+  id: number;
+  jobExistsById: boolean;
+  constructor(private route: ActivatedRoute, private router: Router, private bookmarkedJobService: BookmarkedjobService) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.bookmarkedJobService.getById(this.id)
+      .subscribe(
+        data=>{
+          console.log(data);
+          this.bookmarkedJob=data;
+        },
+        err=>{
+          alert(err.error);
+        }
+      )
   }
 
 }
