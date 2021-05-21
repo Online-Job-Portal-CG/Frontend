@@ -15,10 +15,11 @@ import { ListAllJobsComponent } from './recruiter/job/list-all-jobs/list-all-job
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AwardJobComponent } from './recruiter/job/award-job/award-job.component';
 import { AddFeedbackComponent } from './recruiter/feedback/add-feedback/add-feedback.component';
+import { ListApplicantsComponent } from './recruiter/job/list-applicants/list-applicants.component';
 
 
 @NgModule({
-  declarations: [BookmarkedfreelancerComponent, FeedbackComponent, JobComponent, RecruiterComponent, ListbookmarksComponent, ListfreelancersComponent, AddJobComponent, FindJobByidComponent, FindJobByskillComponent, ListAllJobsComponent, AwardJobComponent, AddFeedbackComponent],
+  declarations: [BookmarkedfreelancerComponent, FeedbackComponent, JobComponent, RecruiterComponent, ListbookmarksComponent, ListfreelancersComponent, AddJobComponent, FindJobByidComponent, FindJobByskillComponent, ListAllJobsComponent, AwardJobComponent, AddFeedbackComponent, ListApplicantsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

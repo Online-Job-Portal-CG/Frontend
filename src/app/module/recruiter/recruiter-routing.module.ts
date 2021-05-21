@@ -14,6 +14,7 @@ import { JobComponent } from './recruiter/job/job.component';
 import { ListAllJobsComponent } from './recruiter/job/list-all-jobs/list-all-jobs.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { AddFeedbackComponent } from './recruiter/feedback/add-feedback/add-feedback.component';
+import { ListApplicantsComponent } from './recruiter/job/list-applicants/list-applicants.component';
 const routes: Routes = [
   //base path
   { path: '', redirectTo: '/recruiter', pathMatch: 'full' },
@@ -63,6 +64,10 @@ const routes: Routes = [
       {
         path: 'award/:jobId',
         component:  AwardJobComponent
+      },
+      {
+        path: 'viewApps/:jobId',
+        component: ListApplicantsComponent
       }
     ]
   },

@@ -13,14 +13,14 @@ export class JobapplicationService {
   public applyToJob(jobapplication: JobApplication): Observable<any> {
     console.log("Apply to Job Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/apply`, jobapplication, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/apply`, jobapplication, { headers, responseType:'text' as 'json' });
   }
 
   //GET Method
-  public findById(id: number): Observable<any> {
-    console.log("Find Job Application by Id");
+  public findAll(): Observable<any> {
+    console.log("Find All Applications Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/findById/${id}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseUrl}/findAll`, { headers, responseType: 'json' });
   }
 
   //DELETE Mapping
@@ -36,9 +36,19 @@ export class JobapplicationService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.put(`${this.baseUrl}/update/${id}`, jobapplication, { headers, responseType: 'json' });
   }
+
+  //GET Mapping
+  public getAllApplicants(jobId: number): Observable<any> {
+    console.log("Find Applications for a Job method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/findAll/job/${jobId}`,{ headers, responseType: 'json' });
+  }
+
+
 }
 
 export class JobApplication {
   jobId: number;
   coverLetter: string;
+  freelancerId: number;
 }

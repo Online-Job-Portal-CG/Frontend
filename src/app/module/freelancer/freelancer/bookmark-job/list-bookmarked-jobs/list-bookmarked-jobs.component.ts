@@ -37,4 +37,8 @@ export class ListBookmarkedJobsComponent implements OnInit {
         )
   }
 
+  applyToJob(jobId: number){
+    this.router.navigate(['apply', jobId], {relativeTo: this.route.parent});
+  }
+
 }

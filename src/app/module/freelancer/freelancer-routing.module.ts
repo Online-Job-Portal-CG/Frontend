@@ -7,6 +7,7 @@ import { ListBookmarkedJobsComponent } from './freelancer/bookmark-job/list-book
 import { ListJobsComponent } from './freelancer/bookmark-job/list-jobs/list-jobs.component';
 import { FreelancerComponent } from './freelancer/freelancer.component';
 import { JobApplicationComponent } from './freelancer/job-application/job-application.component';
+import { SkillExperienceComponent } from './freelancer/skill-experience/skill-experience.component';
 
 const routes: Routes = [
   {
@@ -37,8 +38,16 @@ const routes: Routes = [
       {
         path: 'add',
         component: CreateBookmarkComponent
+      },
+      {
+        path: 'apply/:id',
+        component: JobApplicationComponent
       }
     ]
+  },
+  {
+    path: 'freelancer/skills',
+    component: SkillExperienceComponent,
   }
 ];
 

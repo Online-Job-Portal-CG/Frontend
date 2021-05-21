@@ -8,14 +8,14 @@
                     <table class="table table-hover table-primary table-responsive">
                         <thead>
                             <tr>
-                                <th>Job Id</th>
+                                <th>Bookmark Id</th>
                                 <th>Job Title</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{bookmarkedJob.id}}</td>
-                                <td>{{bookmarkedJob.job.jobTitle}}</td>
+                                <td>{{bookmarkedJob['id']}}</td>
+                                <td>{{bookmarkedJob['job']['jobTitle']}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -34,8 +34,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{bookmarkedJob.skill.name}}</td>
-                                <td>{{bookmarkedJob.skill.description}}</td>
+                                <td>{{bookmarkedJob['skill']['name']}}</td>
+                                <td>{{bookmarkedJob['skill']['description']}}</td>
                             </tr>
                         </tbody>
                     </table>

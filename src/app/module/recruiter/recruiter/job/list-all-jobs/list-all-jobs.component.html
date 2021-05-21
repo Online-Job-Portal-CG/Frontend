@@ -19,7 +19,7 @@
                             <td>{{job.jobDescription}}</td>
                             <td>{{job.skillName}}</td>
                             <td><button class="btn btn-warning" (click)="closeJob(job.jobId)" [disabled]="!job.jobStatus" >Close Job</button></td>
-                            <td><button class="btn btn-info" (click)="awardJob(job.jobId)" [disabled]="!job.jobStatus">Award Job</button></td>
+                            <td><button class="btn btn-info" (click)="receivedAppls(job.jobId)" [disabled]="!job.jobStatus">Received Applications</button></td>
                         </tr>
                     </tbody>
                 </table>

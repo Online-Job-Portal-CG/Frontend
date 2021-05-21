@@ -47,7 +47,7 @@ export class JobService {
   public awardJob(jobId: number, freelancerId: number): Observable<any> {
     console.log("Award Job Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/awardJob/${jobId}/${freelancerId}`, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseUrl}/awardJob/${jobId}/${freelancerId}`, { headers, responseType:'text' as 'json' });
   }
 
   //GET Method

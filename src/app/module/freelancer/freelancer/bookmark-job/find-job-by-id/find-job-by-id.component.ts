@@ -18,7 +18,6 @@ export class FindJobByIdComponent implements OnInit {
     this.bookmarkedJobService.getById(this.id)
       .subscribe(
         data=>{
-          console.log(data);
           this.bookmarkedJob=data;
         },
         err=>{

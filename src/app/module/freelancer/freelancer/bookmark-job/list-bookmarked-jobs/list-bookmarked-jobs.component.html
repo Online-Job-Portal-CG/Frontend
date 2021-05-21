@@ -12,7 +12,7 @@
             <tr *ngFor="let job of bookmarksList">
                 <td>{{job.id}}</td>
                 <td>{{job.jobName}}</td>
-                <td><button class="btn btn-warning" (click)="applyToJob(job.id)">Apply to Job</button></td>
+                <td><button class="btn btn-warning" (click)="applyToJob(job.jobId)">Apply to Job</button></td>
             </tr>
         </tbody>
     </table>

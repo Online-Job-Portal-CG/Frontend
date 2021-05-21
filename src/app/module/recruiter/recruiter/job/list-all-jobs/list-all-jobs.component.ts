@@ -43,8 +43,8 @@ export class ListAllJobsComponent implements OnInit {
 
   }
 
-  awardJob(jobId: number) {
-    this.router.navigate(['../award', jobId], { relativeTo: this.route });
+  receivedAppls(jobId: number) {
+    this.router.navigate(['../viewApps', jobId], { relativeTo: this.route });
   }
 
 }

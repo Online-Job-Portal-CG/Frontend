@@ -1,1 +1,72 @@
-<p>skill-experience works!</p>
+<div class="container-fluid">
+    <div class="row mt-2 text-center">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card">
+                <h4 class="card-title mt-2 mb-2">Manage your Skills</h4>
+                <hr>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <h5 class="card-title mt-2"> Add a New Experience</h5>
+                                <div class="card-body">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#addSkillModal">
+                                        Click Here
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="addSkillModal" tabindex="-1"
+                                        aria-labelledby="addSkillModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="addSkillModalLabel">Add new Experience</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form [formGroup]="skillForm">
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Skill</span>
+                                                            <select name="skillSelector" id="skills" class="form-select" formControlName="skillID">
+                                                                <option value="">Select Skill</option>
+                                                                <option *ngFor="let skill of skillsList" value="{{skill.id}}" >{{skill.name}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Skill Experience</span>
+                                                            <input class="form-control" type="number" formControlName="skillExperience" placeholder="Experience in Years">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" (click)="addSkill()">Save Skill</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <h5 class="card-title mt-2"> Update an Existing Skill</h5>
+                                <div class="card-body">
+                                    <button class="btn btn-warning" (click)="updateSkill()">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <hr>
+    <router-outlet></router-outlet>
+</div>

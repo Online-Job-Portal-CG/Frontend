@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card">
+                <h4 class="card-title">List of Job Applicants</h4>
+                <div class="card-body">
+                    <table class="table table-hover table-striped table-success">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Full Name</th>
+                                <th>UserId</th>
+                                <th colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let applicant of applicantsList; let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{applicant.freelancerName}}</td>
+                                <td>{{applicant.freelancerUName}}</td>
+                                <td><button class="btn btn-outline-dark" (click)="viewApplication(applicant.id)">More Info</button></td>
+                                <td><button class="btn btn-outline-success" (click)="awardJob(applicant.jobId, applicant.freelancerId)">Award Job</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

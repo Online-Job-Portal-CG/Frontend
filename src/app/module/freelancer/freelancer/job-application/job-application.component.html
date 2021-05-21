@@ -1,1 +1,18 @@
-<p>job-application works!</p>
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card shadow-lg text-center bg-light bg-gradient">
+                <h4 class="card-title"> Applying to Job: {{jobDetails['jobTitle']}}</h4>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Cover Letter</span>
+                        <textarea class="form-control" placeholder="Write your coverletter here." #coverLetter></textarea>
+                      </div>
+                      <button type="button" class="btn btn-outline-success" (click)="onSubmit(coverLetter.value)">Apply</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
