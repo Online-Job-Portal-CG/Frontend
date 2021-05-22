@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <div class="card">
+                            <div class="card border-5 shadow">
                                 <h5 class="card-title mt-2"> Add a New Experience</h5>
                                 <div class="card-body">
                                     <!-- Button trigger modal -->
@@ -23,7 +23,8 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="addSkillModalLabel">Add new Experience</h5>
+                                                    <h5 class="modal-title" id="addSkillModalLabel">Add new Experience
+                                                    </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -31,21 +32,26 @@
                                                     <form [formGroup]="skillForm">
                                                         <div class="input-group mb-3">
                                                             <span class="input-group-text">Skill</span>
-                                                            <select name="skillSelector" id="skills" class="form-select" formControlName="skillID">
+                                                            <select name="skillSelector" id="skills" class="form-select"
+                                                                formControlName="skillId">
                                                                 <option value="">Select Skill</option>
-                                                                <option *ngFor="let skill of skillsList" value="{{skill.id}}" >{{skill.name}}</option>
+                                                                <option *ngFor="let skill of skillsList"
+                                                                    value="{{skill.id}}">{{skill.name}}</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group mb-3">
                                                             <span class="input-group-text">Skill Experience</span>
-                                                            <input class="form-control" type="number" formControlName="skillExperience" placeholder="Experience in Years">
+                                                            <input class="form-control" type="number"
+                                                                formControlName="skillExperience"
+                                                                placeholder="Experience in Years">
                                                         </div>
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary" (click)="addSkill()">Save Skill</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                        (click)="addSkill()">Save Skill</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -54,18 +60,119 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card">
+                            <div class="card border-5 shadow">
                                 <h5 class="card-title mt-2"> Update an Existing Skill</h5>
                                 <div class="card-body">
-                                    <button class="btn btn-warning" (click)="updateSkill()">Update</button>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                        data-bs-target="#updateSkill" (click)="loadSkills()">
+                                        Update
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="updateSkill" tabindex="-1"
+                                        aria-labelledby="updateSkillLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="updateSkillLabel">Update an existing
+                                                        Experience</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form [formGroup]="skillUpdateForm">
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Skill</span>
+                                                            <select name="skillSelector" id="skills" class="form-select"
+                                                                formControlName="skillId">
+                                                                <option value="">Select Skill</option>
+                                                                <option *ngFor="let skill of skillsOfFreelancer"
+                                                                    value="{{skill.skillId}}">{{skill.skillName}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Skill Experience</span>
+                                                            <input class="form-control" type="number"
+                                                                formControlName="skillExperience"
+                                                                placeholder="Experience in Years">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                        (click)="updateSkill()">Update Experience</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row text-center mt-4">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="card border-5 shadow">
+                                <h5 class="card-title mt-2">List Existing Experiences</h5>
+                                <div class="card-body">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                        data-bs-target="#listSkillsByFreelancer">
+                                        List Experiences
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="listSkillsByFreelancer" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="listSkillsByFreelancerLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="listSkillsByFreelancerLabel">Experiences List</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-striped table-warning table-bordered bordered-danger table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Skill Name</th>
+                                                                <th>Experience (Years)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let skill of skillsOfFreelancer">
+                                                                <td>{{skill.skillName}}</td>
+                                                                <td>{{skill.experience}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-2"></div>
+    </div>
+    <div class="row text-center mt-5">
+        <div class="col-5"></div>
+        <div class="col-2">
+            <button class="btn btn-danger" (click)="goBack()">Go Back</button>
+        </div>
+        <div class="col-5"></div>
     </div>
     <hr>
     <router-outlet></router-outlet>

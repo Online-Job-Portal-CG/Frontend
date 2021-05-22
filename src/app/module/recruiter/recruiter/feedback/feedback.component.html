@@ -24,16 +24,48 @@
                     </table>
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-outline-success" (click)="addFeedback(freelancerId)">Add new Feedback</button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Add Feedback
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Add a new Feedback</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <app-add-feedback></app-add-feedback>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col">
-                            <p>Average Ratings: <input class="form-control-plaintext text-center fw-bold fs-4" type="text"
-                                placeholder="{{avgFeedback}}" disabled readonly></p>
+                            <p>Average Ratings: <input class="form-control-plaintext text-center fw-bold fs-4"
+                                    type="text" placeholder="{{avgFeedback}}" disabled readonly></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-3"></div>
+    </div>
+    <div class="row text-center mt-5">
+        <div class="col-5"></div>
+        <div class="col-2">
+            <button class="btn btn-danger" (click)="goBack()">Go Back</button>
+        </div>
+        <div class="col-5"></div>
     </div>
 </div>

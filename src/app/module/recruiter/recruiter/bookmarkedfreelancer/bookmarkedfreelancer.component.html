@@ -4,7 +4,7 @@
             <div class="card shadow border-5 rounded-3 text-center">
                 <div class="card-body">
                     <h5 class="card-title">Bookmark a Freelancer</h5>
-                    <button routerLink="listFreelancers" class="btn btn-success" >List Freelancers</button>
+                    <button routerLink="listFreelancers" class="btn btn-success">List Freelancers</button>
                 </div>
             </div>
         </div>
@@ -12,7 +12,8 @@
             <div class="card shadow border-5 rounded-3 text-center">
                 <div class="card-body">
                     <h5 class="card-title">Find a Bookmark By Id</h5>
-                    <input class="form-control" type="number" id = "bkdFrId" name="bkdFrId" placeholder="Bookmarked Freelancer Id" #bkdFrId>
+                    <input class="form-control" type="number" id="bkdFrId" name="bkdFrId"
+                        placeholder="Bookmarked Freelancer Id" #bkdFrId>
                     <button class="btn btn-primary mt-2" (click)="findById(bkdFrId.value)">Find By Id</button>
                 </div>
             </div>
@@ -25,6 +26,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row text-center mt-5">
+        <div class="col-5"></div>
+        <div class="col-2">
+            <button class="btn btn-danger" (click)="goBack()">Go Back</button>
+        </div>
+        <div class="col-5"></div>
     </div>
     <hr>
     <router-outlet></router-outlet>

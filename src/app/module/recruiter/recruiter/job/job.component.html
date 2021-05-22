@@ -23,11 +23,19 @@
                 <div class="card-body">
                     <h5 class="card-title">Jobs by Skill</h5>
                     <p class="card-text">View All Jobs for a Skill</p>
-                    <input  class="form-control" type="text" name="findBySkill" id="findBySkill" placeholder="Skill Name" #skill>
+                    <input class="form-control" type="text" name="findBySkill" id="findBySkill" placeholder="Skill Name"
+                        #skill>
                     <button class="btn btn-dark mt-2" (click)="findBySkill(skill.value)">View Jobs</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row text-center mt-5">
+        <div class="col-5"></div>
+        <div class="col-2">
+            <button class="btn btn-danger" (click)="goBack()">Go Back</button>
+        </div>
+        <div class="col-5"></div>
     </div>
     <hr>
     <router-outlet></router-outlet>

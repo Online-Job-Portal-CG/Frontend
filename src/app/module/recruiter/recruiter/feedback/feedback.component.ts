@@ -10,12 +10,14 @@ import { FeedbackService } from 'src/app/services/feedback.service';
 export class FeedbackComponent implements OnInit {
   feedbacks: any[];
   freelancerId: string;
+  recruiterId: string;
   avgFeedback: number;
   constructor(private route:ActivatedRoute, private router: Router, private feedbackService: FeedbackService) { }
 
   ngOnInit(): void {
     this.freelancerId = this.route.snapshot.params['frId'];
-    this.feedbackService.getFeedbackForFreelancer(this.freelancerId)
+    this.recruiterId = String(localStorage.getItem('recruiterUName'));
+    this.feedbackService.getFeedbackForFreelancer(this.freelancerId, this.recruiterId)
       .subscribe(
         data=>{
           console.log(data);
@@ -39,5 +41,7 @@ export class FeedbackComponent implements OnInit {
   addFeedback(frUName: string){
     this.router.navigate(['../add',frUName], {relativeTo:this.route})
   }
-
+  goBack() {
+    this.router.navigate(["../recruiter/bmark/freelancer/list"]);
+  }
 }

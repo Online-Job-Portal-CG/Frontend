@@ -31,5 +31,8 @@ export class BookmarkJobComponent implements OnInit {
       this.router.navigate(['../job'], {relativeTo: this.route});
     });
   }
+  goBack() {
+    this.router.navigate(["../freelancer"]);
+  }
 
 }

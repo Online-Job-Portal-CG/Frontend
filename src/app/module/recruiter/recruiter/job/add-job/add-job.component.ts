@@ -34,7 +34,7 @@ export class AddJobComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.postJob = new Job();
     this.postJob.jobTitle = this.jobForm.value.jobTitle;
     this.postJob.jobDescription = this.jobForm.value.jobDescription;
     this.postJob.skillId = this.jobForm.value.skillId;

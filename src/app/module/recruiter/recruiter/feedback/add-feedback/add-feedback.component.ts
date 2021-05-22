@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FeedbackDTO, FeedbackService } from 'src/app/services/feedback.service';
+import { Feedback, FeedbackService } from 'src/app/services/feedback.service';
 
 @Component({
   selector: 'app-add-feedback',
@@ -10,15 +10,16 @@ import { FeedbackDTO, FeedbackService } from 'src/app/services/feedback.service'
 })
 export class AddFeedbackComponent implements OnInit {
   feedbackForm: FormGroup;
-  newFeedback: FeedbackDTO;
-  freelancerId: string;
+  newFeedback: Feedback;
+  freelancerUName: string;
   recruiterId: string;
   constructor(private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private feedbackService: FeedbackService) { }
 
   ngOnInit(): void {
-    this.freelancerId = this.route.snapshot.params['frUName'];
+    this.newFeedback = new Feedback();
+    this.freelancerUName = this.route.snapshot.params['frId'];
+    
     this.recruiterId = localStorage.getItem('recruiterUName');
-
     this.feedbackForm = this.formBuilder.group({
       ratings: '',
       comments: '',
@@ -28,16 +29,16 @@ export class AddFeedbackComponent implements OnInit {
   }
 
   addFeedback() {
-    this.newFeedback = new FeedbackDTO();
+    this.newFeedback = new Feedback();
     this.newFeedback.ranges = this.feedbackForm.value.ratings;
     this.newFeedback.comments = this.feedbackForm.value.comments;
-    this.newFeedback.recruiterId = String(this.recruiterId);
-    this.newFeedback.freelancerId = String(this.freelancerId);
+    this.newFeedback.recruiterUName = String(this.recruiterId);
+    this.newFeedback.freelancerUName = String(this.freelancerUName);
     console.log(this.newFeedback)
     this.feedbackService.addFeedback(this.newFeedback)
       .subscribe(
         data => {
-          console.log(data);
+          alert(data);
         },
         err => {
           console.log(err);

@@ -1,27 +1,19 @@
-<div class="container-fluid overflow-hidden">
-    <div class="row mt-5">
-        <div class="col-3"></div>
-        <div class="col-6 text-center">
-            <div class="card mt-5 bg-light bg-gradient">
-                <h5 class="card-title mt-1">Post a new Feedback</h5>
-                <div class="card-body">
-                    <form class="form" [formGroup]="feedbackForm">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Ratings</span>
-                            <input class="form-control" type="number" name="ratings" id="ratings" formControlName="ratings" placeholder="Enter a value between 1 to 5">
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Comments</span>
-                            <textarea class="form-control" formControlName="comments"></textarea>
-                        </div>
-                        <div class="input-group d-grid gap-2 mx-auto">
-                            <button class="btn btn-outline-success" type="submit" (click)="addFeedback()">Post Comment</button>
-                            <button class="btn btn-outline-danger" type="reset">Reset</button>
-                        </div>
-                    </form>
-                </div>
+<div class="card border-5 shadow mt-5 bg-light bg-gradient">
+    <div class="card-body">
+        <form class="form" [formGroup]="feedbackForm">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Ratings</span>
+                <input class="form-control" type="number" name="ratings" id="ratings" formControlName="ratings"
+                    placeholder="Enter a value between 1 to 5">
             </div>
-        </div>
-        <div class="col-3"></div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Comments</span>
+                <textarea class="form-control" formControlName="comments"></textarea>
+            </div>
+            <div class="input-group d-grid gap-2 mx-auto">
+                <button class="btn btn-outline-success" type="submit" (click)="addFeedback()">Post Comment</button>
+                <button class="btn btn-outline-danger" type="reset">Reset</button>
+            </div>
+        </form>
     </div>
 </div>

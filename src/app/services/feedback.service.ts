@@ -10,19 +10,19 @@ export class FeedbackService {
   constructor(private http: HttpClient) { }
 
   //POST Method
-  public addFeedback(feedbackDto: FeedbackDTO): Observable<any> {
+  public addFeedback(feedback: Feedback): Observable<any> {
     console.log("Create New Feedback");
-    console.log(feedbackDto);
+    console.log(feedback);
     
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`,feedbackDto, { headers, responseType:'json' });
+    return this.http.post(`${this.baseUrl}/add`,feedback, { headers, responseType:'text' as 'json' });
   }
 
   //GET Method
-  public getFeedbackForFreelancer(id: string): Observable<any> {
+  public getFeedbackForFreelancer(fId: string, rId:string): Observable<any> {
     console.log("Get Feedbacks for Freelancer");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/get/${id}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseUrl}/get/freelancer/${fId}/recruiter/${rId}`, { headers, responseType: 'json' });
   }
 
   //GET Method
@@ -33,9 +33,9 @@ export class FeedbackService {
   }
 }
 
-export class FeedbackDTO {
+export class Feedback {
   ranges: number;
   comments: string;
-  recruiterId: string;
-  freelancerId: string;
+  recruiterUName: string;
+  freelancerUName: string;
 }

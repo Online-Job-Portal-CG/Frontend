@@ -11,12 +11,15 @@ import { CreateBookmarkComponent } from './freelancer/bookmark-job/create-bookma
 import { ListJobsComponent } from './freelancer/bookmark-job/list-jobs/list-jobs.component';
 import { FindJobByIdComponent } from './freelancer/bookmark-job/find-job-by-id/find-job-by-id.component';
 import { ListBookmarkedJobsComponent } from './freelancer/bookmark-job/list-bookmarked-jobs/list-bookmarked-jobs.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [SkillComponent, SkillExperienceComponent, BookmarkJobComponent, JobApplicationComponent, FreelancerComponent, CreateBookmarkComponent, ListJobsComponent, FindJobByIdComponent, ListBookmarkedJobsComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     FreelancerRoutingModule
   ]
 })

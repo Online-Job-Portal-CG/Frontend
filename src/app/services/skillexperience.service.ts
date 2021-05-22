@@ -13,7 +13,7 @@ export class SkillexperienceService {
   public addExperience(skillExp: SkillExperience): Observable<any> {
     console.log("Add Skill Experience");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, skillExp, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`, skillExp, { headers, responseType: 'text' as 'json' });
   }
   //GET Method
   public getExperienceById(id: number): Observable<any> {
@@ -23,10 +23,17 @@ export class SkillexperienceService {
   }
 
   //PUT Method
-  public updateSkillExp(id: number, years: number): Observable<any> {
+  public updateSkillExp(id: number, freelancerId: number, years: number): Observable<any> {
     console.log("Update Experience");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/update/${id}`, years, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseUrl}/update/freelancer/${freelancerId}/skill/${id}`, years, { headers, responseType: 'text' as 'json' });
+  }
+
+  //GET Method
+  public getAllSkills(id: number): Observable<any> {
+    console.log("Get All Skills By Freelancer Method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/getAll/freelancer/${id}`, { headers, responseType: 'json' });
   }
 }
 

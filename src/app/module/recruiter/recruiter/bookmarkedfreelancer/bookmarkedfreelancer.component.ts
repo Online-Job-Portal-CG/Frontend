@@ -28,8 +28,10 @@ export class BookmarkedfreelancerComponent implements OnInit {
       this.router.navigate(['./find', id], {relativeTo: this.route});
     }, err=> {
       alert(err.error);
-      this.router.navigate(['../freelancer'], {relativeTo: this.route});
+      this.router.navigate(['../recruiter'], {relativeTo: this.route});
     });
   }
-
+  goBack() {
+    this.router.navigate(["../recruiter"]);
+  }
 }
