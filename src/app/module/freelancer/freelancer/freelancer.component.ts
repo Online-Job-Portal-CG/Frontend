@@ -14,6 +14,6 @@ export class FreelancerComponent implements OnInit {
   }
   logOut() {
     localStorage.clear();
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => { window.location.reload(); });
   }
 }

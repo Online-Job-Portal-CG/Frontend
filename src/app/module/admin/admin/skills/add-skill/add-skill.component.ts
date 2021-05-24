@@ -15,7 +15,6 @@ export class AddSkillComponent implements OnInit {
 
   ngOnInit(): void {
     this.skill = new Skill();
-    
     this.newSkillForm = this.formBuilder.group({
       skillName: ['', Validators.required],
       skillDescription: ['', Validators.required]
@@ -25,6 +24,7 @@ export class AddSkillComponent implements OnInit {
     this.skill = new Skill();
     this.skill.name = this.newSkillForm.value.skillName;
     this.skill.description = this.newSkillForm.value.skillDescription;
+    console.log(this.skill);
     this.skillService.createSkill(this.skill)
       .subscribe(
         data=>{

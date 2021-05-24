@@ -9,17 +9,18 @@ import { FreelancerService } from 'src/app/services/freelancer.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router:Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
   addSkill() {
-    this.router.navigate(['skills/add'], {relativeTo: this.route});
+    this.router.navigate(['skills/add'], { relativeTo: this.route });
   }
 
   logOut() {
     localStorage.clear();
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => { window.location.reload(); });
+
   }
 }

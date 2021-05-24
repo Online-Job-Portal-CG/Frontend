@@ -45,7 +45,7 @@ export class AddJobComponent implements OnInit {
       data=>{
         alert(data);
         // alert(data);
-        this.router.navigate(['../../jobs'], {relativeTo: this.route});
+        this.router.navigate(['../../jobs'], {relativeTo: this.route}).then(() => { window.location.reload(); });
       },
       err=>{
         // alert(err.error);

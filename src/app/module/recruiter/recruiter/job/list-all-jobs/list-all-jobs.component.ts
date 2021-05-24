@@ -43,7 +43,7 @@ export class ListAllJobsComponent implements OnInit {
   }
 
   receivedAppls(jobId: number) {
-    this.router.navigate(['../viewApps', jobId], { relativeTo: this.route });
+    this.router.navigate(['../viewApps', jobId], { relativeTo: this.route }).then(() => { window.location.reload(); });
   }
 
 }
