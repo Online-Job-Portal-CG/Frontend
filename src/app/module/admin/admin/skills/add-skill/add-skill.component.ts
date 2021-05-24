@@ -9,22 +9,22 @@ import { Skill, SkillService } from 'src/app/services/skill.service';
   styleUrls: ['./add-skill.component.css']
 })
 export class AddSkillComponent implements OnInit {
-  skillForm: FormGroup;
+  newSkillForm: FormGroup;
   skill:Skill;
   constructor(private skillService: SkillService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.skill = new Skill();
     
-    this.skillForm = this.formBuilder.group({
+    this.newSkillForm = this.formBuilder.group({
       skillName: ['', Validators.required],
       skillDescription: ['', Validators.required]
     });
   }
   onSubmit() {
     this.skill = new Skill();
-    this.skill.name = this.skillForm.value.skillName;
-    this.skill.description = this.skillForm.value.skillDescription;
+    this.skill.name = this.newSkillForm.value.skillName;
+    this.skill.description = this.newSkillForm.value.skillDescription;
     this.skillService.createSkill(this.skill)
       .subscribe(
         data=>{
