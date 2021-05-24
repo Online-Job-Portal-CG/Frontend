@@ -26,7 +26,7 @@ export class SkillexperienceService {
   public updateSkillExp(id: number, freelancerId: number, years: number): Observable<any> {
     console.log("Update Experience");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/update/freelancer/${freelancerId}/skill/${id}`, years, { headers, responseType: 'text' as 'json' });
+    return this.http.put(`${this.baseUrl}/update/freelancer/${freelancerId}/skill/${id}?years=${years}`, {headers, responseType: 'text' as 'json'});
   }
 
   //GET Method

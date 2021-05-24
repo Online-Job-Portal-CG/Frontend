@@ -69,9 +69,11 @@ export class SkillExperienceComponent implements OnInit {
       .subscribe(
         data => {
           alert(data);
+          window.location.reload();
         },
         err => {
           console.log(err.error);
+          window.location.reload();
         }
       );
   }

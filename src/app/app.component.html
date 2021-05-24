@@ -27,7 +27,7 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="/" (click)="logOut()">Log Out</a>
               </li>
-            </ng-template>  
+            </ng-template>
 
 
           </ul>
@@ -36,4 +36,25 @@
     </nav>
   </div>
   <router-outlet></router-outlet>
+  <footer class="pt-4 my-md-5 pt-md-5 border-top" style="background-color: grey;">
+    <div class="row mt-3">
+      <div class="col-4">
+        <div class="card" style="border: none;">
+
+        </div>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4">
+        <h5>Navigate</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-dark text-decoration-none" href="/">Home</a></li>
+          <li><a class="link-dark text-decoration-none" href="/about">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-5 text-center">
+      <p>Made with ❤️ using <b>Angular and Spring Boot.</b></p>
+      <p><b>Copyright &#169; Capgemini India 2021</b></p>
+    </div>
+  </footer>
 </div>

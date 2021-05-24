@@ -27,6 +27,7 @@ import { RecruiterModule } from './module/recruiter/recruiter.module';
 import { LoginComponent } from './components/login/login.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     AddBookmarkfreelancerComponent,
     FindBookmarkfreelancerByidComponent,
     LoginComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
