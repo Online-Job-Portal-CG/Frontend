@@ -38,11 +38,12 @@ export class AddJobComponent implements OnInit {
     this.postJob.jobTitle = this.jobForm.value.jobTitle;
     this.postJob.jobDescription = this.jobForm.value.jobDescription;
     this.postJob.skillId = this.jobForm.value.skillId;
-    this.postJob.freelancerId = 0;
     this.postJob.recruiterId = Number(localStorage.getItem('recruiterId'));
+    this.postJob.freelancerId = Number('2');
+    console.log(this.postJob);
     this.jobService.addJob(this.postJob).subscribe(
       data=>{
-        console.log(data);
+        alert(data);
         // alert(data);
         this.router.navigate(['../../jobs'], {relativeTo: this.route});
       },

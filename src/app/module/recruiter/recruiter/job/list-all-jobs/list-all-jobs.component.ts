@@ -29,11 +29,10 @@ export class ListAllJobsComponent implements OnInit {
       )
   }
   closeJob(jobId: number) {
-    alert(jobId);
     this.jobService.closeJob(jobId)
       .subscribe(
         data => {
-          console.log(data);
+          alert(data);
         },
         err => {
           alert(err.error);

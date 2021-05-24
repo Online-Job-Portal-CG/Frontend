@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Online-Job-Portal';
+  loggedIn:boolean = Boolean(localStorage.getItem('loggedIn'));
+  constructor(private router:Router){};
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
 }

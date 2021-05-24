@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recruiter',
@@ -8,17 +8,18 @@ import { Router } from '@angular/router';
 })
 export class RecruiterComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log("Inside recruiter")
   }
 
-  findBmarkById(id: number){
+  findBmarkById(id: number) {
     console.log(id);
-    this.router.navigate(['find/id',id]);
+    this.router.navigate(['find/id', id]);
   }
-  onClick() {
-    console.log("button Clicked");
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

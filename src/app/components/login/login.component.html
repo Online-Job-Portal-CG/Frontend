@@ -1,36 +1,155 @@
 <div class="container-fluid">
     <div class="row mt-5">
         <div class="col-3"></div>
-        <div class="col-6">
-            <form class="form" [formGroup]="loginForm">
+        <div class="col-6 card shadow-lg bg-light bg-gradient">
+            <form class="form mt-3" [formGroup]="loginForm" [ngClass]="{ 'was-validated':loginFormSubmitAttempt}">
                 <div class="mb-3 form-group">
-                    <label for="loginId" class="form-label">UserName</label>
+                    <b><label for="loginId" class="form-label">UserName</label></b>
                     <span style="color: red">*</span>
-                    <input type="text" class="form-control" id="loginId" placeholder="userName" formControlName="loginId">
+                    <input type="text" class="form-control" id="loginId" placeholder="userName"
+                        formControlName="loginId" required>
+                    <div class="invalid-feedback" *ngIf="isLoginFieldInvalid('loginId')">
+                        Please enter a userName.
+                    </div>
                 </div>
                 <div class="mb-3 form-group">
-                    <label for="passwordField" class="form-label">Password</label>
+                    <b><label for="passwordField" class="form-label">Password</label></b>
                     <span style="color: red">*</span>
                     <input type="password" class="form-control" id="passwordField" placeholder="password"
-                        formControlName="password">
+                        formControlName="password" required>
+                    <div class="invalid-feedback" *ngIf="isLoginFieldInvalid('password')">
+                        Please enter a password.
+                    </div>
                 </div>
                 <div class="mb-3 form-group">
-                    <label for="userRole">Select Role</label>
+                    <b><label for="userRole">Select Role</label></b>
                     <span style="color: red">*</span>
-                    <select class="form-select" id="userRole" formControlName="role">
+                    <select class="form-select" id="userRole" formControlName="role" required>
                         <option value="1">Admin</option>
                         <option value="2">Recruiter</option>
                         <option value="3">Freelancer</option>
                     </select>
+                    <div class="invalid-feedback" *ngIf="isLoginFieldInvalid('role')">
+                        Please choose a valid role.
+                    </div>
                 </div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button type="submit" class="btn btn-success" (click)="onsubmit()">Login</button>
-                    <br>
-                    <button type="reset" class="btn btn-dark">Reset</button>
+                <div class="d-grid gap-2 col-6 mx-auto mb-1">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-5">
+                            <button type="submit" class="btn btn-success" (click)="onsubmit()">Login</button>
+                        </div>
+                        <div class="col-5">
+                            <button type="reset" class="btn btn-dark">Reset</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
                 </div>
             </form>
-        </div>
-        <div class="col-3"></div>
+            <div class="text-center mb-3">
+                <small>Not a user yet?<span> Click here to <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#signUp">Sign Up</a>.</span></small>
+            </div>
+            <div>
+                <!-- Modal -->
+                <div class="modal fade" id="signUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="signUpLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form [formGroup]="signUpForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <b><label for="firstName" class="form-label">First name</label></b>
+                                            <input type="text" class="form-control" id="firstName" placeholder="Mark"
+                                                formControlName="firstName" required>
+                                            <div class="invalid-feedback" *ngIf="isSignUpFieldInvalid('firstName')">
+                                                Enter a First Name.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <b><label for="lastName" class="form-label">Last name</label></b>
+                                            <input type="text" class="form-control" id="lastName"
+                                                formControlName="lastName" placeholder="Otto" required>
+                                            <div class="invalid-feedback" *ngIf="isSignUpFieldInvalid('lastName')">
+                                                Enter a Last Name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <b><label for="userName" class="form-label">Username</label></b>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                <input type="text" class="form-control" id="userName"
+                                                    aria-describedby="inputGroupPrepend2" formControlName="userName"
+                                                    required>
+                                                <div class="invalid-feedback" *ngIf="isSignUpFieldInvalid('userName')">
+                                                    Enter a UserName.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <b><label for="password" class="form-label">Password</label></b>
+                                            <input type="password" class="form-control" id="password"
+                                                placeholder="Password" formControlName="password" required>
+                                            <div class="invalid-feedback" *ngIf="isSignUpFieldInvalid('password')">
+                                                Enter a Password.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <b><label for="roleSelect" class="form-label">Role</label></b>
+                                            <select class="form-select" id="roleSelect" formControlName="role" required>
+                                                <option selected disabled value="">Choose Role</option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Recruiter</option>
+                                                <option value="3">Freelancer</option>
+                                            </select>
+                                            <div class="invalid-feedback" *ngIf="isSignUpFieldInvalid('role')">
+                                                Please choose a valid role.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkTerms"
+                                                    required>
+                                                <b><label class="form-check-label" for="checkTerms">
+                                                        Agree to terms and conditions
+                                                    </label></b>
+                                                <div class="invalid-feedback">
+                                                    Please agree to our terms.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 mt-2">
+                                        <div class="col-4"></div>
+                                        <div class="col-4">
+                                            <button class="btn btn-primary" type="submit" (click)="createUser()">Create
+                                                User</button>
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
 
+        </div>
     </div>
 </div>

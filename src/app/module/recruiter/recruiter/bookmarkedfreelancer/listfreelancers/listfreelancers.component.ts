@@ -30,6 +30,7 @@ export class ListfreelancersComponent implements OnInit {
     this.bookmarkedFreelancer.recruiterId = Number(localStorage.getItem('recruiterId'));
     // console.log(this.recruiterService.getRecruiterId());
     console.log(localStorage.getItem('recruiterId'));
+    console.log(frId);
     this.bookmarkedFreelancerService.addBookmarkFreelancer(this.bookmarkedFreelancer)
     .subscribe(
       data=>{

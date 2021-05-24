@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row mt-3 text-center">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card border-5 shadow bg-gradient bg-light">
+                <h5 class="card-title mt-3">Add a new Skill</h5>
+                <div class="card-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-text">Name</span>
+                                <input class="form-control" type="text" name="name" id="skillName"
+                                    placeholder="Skill Name">
+                            </div>
+                            <div class="input-group mt-1">
+                                <span class="input-group-text">Description</span>
+                                <input class="form-control" type="text" name="Description" id="skillDesc"
+                                    placeholder="Skill Description">
+                            </div>
+                            <div class="row mt-3 text-center">
+                                <div class="col-5"></div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-success" (click)="onSubmit()">Create
+                                            Skill</button>
+                                    </div>
+                                </div>
+                                <div class="col-5"></div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row text-center mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="btn btn-outline-danger" (click)="goBack()">Go Back</button>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

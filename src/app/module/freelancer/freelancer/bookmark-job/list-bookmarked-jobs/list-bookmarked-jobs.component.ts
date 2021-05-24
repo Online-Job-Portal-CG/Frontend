@@ -25,7 +25,8 @@ export class ListBookmarkedJobsComponent implements OnInit {
           alert(err.error);
         }
       );
-      this.bookmarkedJobService.getAll()
+      console.log(this.freelancerId);
+      this.bookmarkedJobService.getAll(this.freelancerId)
         .subscribe(
           data =>{
             this.bookmarksList=data;

@@ -1,17 +1,31 @@
-<div class="container-fluid row">
-    <div class="card shadow border-5 rounded-3 col text-center">
-        <div class="card-body">
-            <h5 class="card-title">Bookmark Jobs</h5>
-            <p class="card-text">Manage your Bookmarked Jobs</p>
-            <button class="btn btn-success" routerLink="/freelancer/bmark/job">Explore Bookmarks</button>
+<div class="container-fluid">
+    <div class="row g-3 mt-3">
+        <div class="col-2"></div>
+        <div class="col-4">
+            <div class="card shadow border-5 rounded-3 text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Bookmark Jobs</h5>
+                    <p class="card-text">Manage your Bookmarked Jobs</p>
+                    <button class="btn btn-success" routerLink="/freelancer/bmark/job">Explore Bookmarks</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card shadow border-5 rounded-3 col text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Skills</h5>
+                    <p class="card-text">Manage your Skills</p>
+                    <button class="btn btn-primary" routerLink="/freelancer/skills">Explore Skills</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card shadow border-5 rounded-3 col text-center">
-        <div class="card-body">
-            <h5 class="card-title">Skills</h5>
-            <p class="card-text">Manage your Skills</p>
-            <button class="btn btn-primary" routerLink="/freelancer/skills">Explore Skills</button>
+    <div class="row mt-3 text-center">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="btn btn-danger" (click)="logOut()">Log Out</button>
         </div>
+        <div class="col-4"></div>
     </div>
     <router-outlet></router-outlet>
 </div>

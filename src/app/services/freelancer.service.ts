@@ -14,7 +14,7 @@ export class FreelancerService {
   public addFreelancer(freelancer: Freelancer): Observable<any> {
     console.log("Add Freelancer Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, freelancer, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`, freelancer, { headers, responseType:'text' as 'json' });
   }
 
   //GET Method

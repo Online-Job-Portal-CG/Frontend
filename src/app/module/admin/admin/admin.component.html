@@ -1,1 +1,41 @@
-<p>admin works!</p>
+<div class="container-fluid">
+    <div class="row g-3 mt-3 text-center">
+        <div class="col-4">
+            <div class="card border-5 shadow bg-gradient bg-light">
+                <h5 class="card-title">Manage Freelancers</h5>
+                <div class="card-body">
+                    <button class="btn btn-outline-success" routerLink="freelancers">List all Freelancers</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-5 shadow bg-gradient bg-light">
+                <h5 class="card-title">Manage Recruiters</h5>
+                <div class="card-body">
+                    <button class="btn btn-outline-warning" routerLink="recruiters">List all Recruiters</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-5 shadow bg-gradient bg-light">
+                <h5 class="card-title">Manage Skills</h5>
+                <div class="card-body">
+                    <div class="mb-1">
+                        <button class="btn btn-outline-success" (click)="addSkill()">Add new Skill</button>
+                    </div>
+                    <div class="mb-1">
+                        <button class="btn btn-outline-dark" routerLink="skills">List all Skills</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="btn btn-danger" (click)="logOut()">Log Out</button>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

@@ -27,14 +27,14 @@ export class AdminService {
   public addAdmin(admin: Admin): Observable<any> {
     console.log("Add Admin Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/save`, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/save`, admin, { headers, responseType:'text' as 'json' });
   }
 
   //PUT Method
   public updateAdmin(id: number, admin:Admin): Observable<any> {
     console.log("Update Admin Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/update/${id}`, admin, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseUrl}/update/${id}`, admin, { headers, responseType:'text' as 'json' });
   }
 }
 

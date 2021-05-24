@@ -44,6 +44,12 @@ export class JobapplicationService {
     return this.http.get(`${this.baseUrl}/findAll/job/${jobId}`,{ headers, responseType: 'json' });
   }
 
+  //GET Method
+  public findByFreelancerId(jobId: number, freelancerId: number) {
+    console.log("Find Applications for a Job method");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/findByFrId/job/${jobId}/frId/${freelancerId}`,{headers, responseType: 'json'});
+  }
 
 }
 

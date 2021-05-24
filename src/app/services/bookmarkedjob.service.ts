@@ -38,10 +38,10 @@ export class BookmarkedjobService {
     return this.http.get(`${this.baseUrl}/get/skill/${skillName}`, {headers, responseType:'json'});
   }
   //GET Method
-  public getAll(): Observable<any> {
+  public getAll(frId: number): Observable<any> {
     console.log("Get Bookmarked Jobs method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/findAll`, {headers, responseType:'json'});
+    return this.http.get(`${this.baseUrl}/findAll/${frId}`, {headers, responseType:'json'});
   }
 }
 

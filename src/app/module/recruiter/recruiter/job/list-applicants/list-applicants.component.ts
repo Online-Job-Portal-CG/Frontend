@@ -22,7 +22,7 @@ export class ListApplicantsComponent implements OnInit {
     this.jobId = this.route.snapshot.params['jobId'];
     console.log(this.jobId)
 
-    this.jobApplicationService.findAll()
+    this.jobApplicationService.getAllApplicants(this.jobId)
       .subscribe(
         data => {
           console.log(data);
@@ -48,5 +48,17 @@ export class ListApplicantsComponent implements OnInit {
       this.router.navigate(['./list'],{relativeTo:this.route.parent});
 
   }
+
+  // viewApplication(freelancerId: number, jobId: number) {
+  //   this.jobApplicationService.findByFreelancerId(jobId, freelancerId)
+  //     .subscribe(
+  //       data=>{
+  //         console.log(data);
+  //       },
+  //       err=>{
+  //         alert(err.error);
+  //       }
+  //     )
+  // }
 
 }

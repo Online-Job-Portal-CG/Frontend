@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class RecruiterService {
   baseUrl = "http://localhost:8001/recruiter";
-  recruiterId:number;
+  recruiterId: number;
   constructor(private http: HttpClient) { }
-  
+
   //POST Method
   public addRecruiter(recruiter: Recruiter): Observable<any> {
     console.log("Create new Recruiter");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, recruiter, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`, recruiter, { headers, responseType: 'text' as 'json' });
   }
 
   //GET Method
@@ -33,7 +33,14 @@ export class RecruiterService {
   public update(id: number, recruiter: Recruiter): Observable<any> {
     console.log("Update Recruiter");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/update/${id}`, recruiter, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseUrl}/update/${id}`, recruiter, { headers, responseType: 'text' as 'json' });
+  }
+
+  //GET Method
+  public findAll(): Observable<any> {
+    console.log("Find all Recruiters");
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get(`${this.baseUrl}/getAll`, { headers, responseType: 'json' });
   }
 }
 

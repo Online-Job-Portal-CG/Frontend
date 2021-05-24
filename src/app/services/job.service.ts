@@ -13,7 +13,7 @@ export class JobService {
   public addJob(job: Job): Observable<any> {
     console.log("Create new Job Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/postJob`, job, { headers, responseType: 'text' as 'json' });
+    return this.http.post("http://localhost:8001/job/postJob", job, { headers, responseType: 'text' as 'json' });
   }
 
   //GET Method
@@ -34,7 +34,7 @@ export class JobService {
   public closeJob(id: number): Observable<any> {
     console.log("Close a job method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/close/${id}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseUrl}/close/${id}`, { headers, responseType:'text' as 'json' });
   }
   //GET Method
   public getAllJobs(): Observable<any> {
