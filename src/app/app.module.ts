@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 import { AddBookmarkfreelancerComponent } from './module/recruiter/recruiter/bookmarkedfreelancer/add-bookmarkfreelancer/add-bookmarkfreelancer.component';
 import { FindBookmarkfreelancerByidComponent } from './module/recruiter/recruiter/bookmarkedfreelancer/find-bookmarkfreelancer-byid/find-bookmarkfreelancer-byid.component';
@@ -34,7 +33,6 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     HomeComponent,
     AboutUsComponent,
-    ContactUsComponent,
     AddBookmarkfreelancerComponent,
     FindBookmarkfreelancerByidComponent,
     LoginComponent,
